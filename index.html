@@ -47,33 +47,30 @@ p{
     text-align:center;
     margin-top:30px;
     color:#ff4f81;
-    font-weight:bold;
-    font-size:25px;
+    font-size:28px;
 }
 
 .open-btn{
     position:fixed;
     inset:0;
+    background:#fff5f7;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#fff5f7;
     z-index:999;
 }
 
 .open-btn button{
-    padding:18px 35px;
-    font-size:20px;
+    padding:18px 40px;
+    font-size:22px;
     border:none;
     border-radius:50px;
     background:#ff4f81;
     color:white;
     cursor:pointer;
-    transition:.3s;
 }
 
 .open-btn button:hover{
-    transform:scale(1.05);
     background:#ff2f6d;
 }
 
@@ -85,8 +82,9 @@ p{
 
 <body>
 
-<audio id="bgm" loop>
+<audio id="bgm" preload="auto">
     <source src="riskitall.mp3" type="audio/mpeg">
+    your browser does not support audio.
 </audio>
 
 <div class="open-btn" id="startScreen">
@@ -129,19 +127,27 @@ alam mo kung bakit ako maghihintay kahit walang kasiguraduhan? kasi para sakin i
 susubukan ko kasi mahal na mahal kita.
 </p>
 
-<div class="footer">
-❤️
-</div>
+<div class="footer">❤️</div>
 
 </div>
 
 </div>
 
 <script>
-function startLetter(){
-    document.getElementById("bgm").play();
-    document.getElementById("startScreen").style.display="none";
-    document.getElementById("content").style.display="block";
+function startLetter() {
+    const music = document.getElementById("bgm");
+
+    music.volume = 1.0;
+
+    music.play()
+    .then(() => {
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    })
+    .catch((err) => {
+        alert("music could not play. please click anywhere on the page and try again.");
+        console.log(err);
+    });
 }
 </script>
 
