@@ -3,51 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>for you</title>
+<title>for you ❤️</title>
 
 <style>
-body{
+*{
     margin:0;
     padding:0;
-    background:#fff5f7;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial, Helvetica, sans-serif;
+    background:#fff5f7;
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
-}
-
-.card{
-    background:white;
-    width:90%;
-    max-width:700px;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-
-h1{
-    text-align:center;
-    color:#ff4f81;
-}
-
-h2{
-    text-align:center;
-    color:#444;
-}
-
-p{
-    color:#444;
-    font-size:18px;
-    line-height:1.8;
-    text-align:justify;
-}
-
-.footer{
-    text-align:center;
-    margin-top:30px;
-    color:#ff4f81;
-    font-size:28px;
+    padding:20px;
 }
 
 .open-btn{
@@ -61,39 +33,84 @@ p{
 }
 
 .open-btn button{
-    padding:18px 40px;
-    font-size:22px;
-    border:none;
-    border-radius:50px;
     background:#ff4f81;
     color:white;
+    border:none;
+    padding:18px 35px;
+    font-size:22px;
+    border-radius:50px;
     cursor:pointer;
+    transition:.3s;
 }
 
 .open-btn button:hover{
     background:#ff2f6d;
+    transform:scale(1.05);
 }
 
 #content{
     display:none;
+    width:100%;
+}
+
+.card{
+    background:white;
+    max-width:700px;
+    margin:auto;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+h1{
+    text-align:center;
+    color:#ff4f81;
+    margin-bottom:10px;
+}
+
+h2{
+    text-align:center;
+    color:#444;
+    margin-bottom:25px;
+}
+
+p{
+    font-size:18px;
+    color:#444;
+    line-height:1.8;
+    text-align:justify;
+    margin-bottom:18px;
+}
+
+.player{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.footer{
+    text-align:center;
+    font-size:30px;
+    margin-top:25px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<audio id="bgm" preload="auto">
-    <source src="riskitall.mp3" type="audio/mpeg">
-    your browser does not support audio.
-</audio>
-
 <div class="open-btn" id="startScreen">
-    <button onclick="startLetter()">open my letter ❤️</button>
+<button onclick="startLetter()">open my letter ❤️</button>
 </div>
 
 <div id="content">
 
 <div class="card">
+
+<div class="player">
+<audio id="bgm" controls loop>
+<source src="riskitall.mp3" type="audio/mpeg">
+your browser does not support audio.
+</audio>
+</div>
 
 <h1>you are worth the wait</h1>
 
@@ -127,27 +144,26 @@ alam mo kung bakit ako maghihintay kahit walang kasiguraduhan? kasi para sakin i
 susubukan ko kasi mahal na mahal kita.
 </p>
 
-<div class="footer">❤️</div>
+<div class="footer">
+❤️
+</div>
 
 </div>
 
 </div>
 
 <script>
-function startLetter() {
-    const music = document.getElementById("bgm");
+function startLetter(){
 
-    music.volume = 1.0;
+document.getElementById("startScreen").style.display="none";
+document.getElementById("content").style.display="block";
 
-    music.play()
-    .then(() => {
-        document.getElementById("startScreen").style.display = "none";
-        document.getElementById("content").style.display = "block";
-    })
-    .catch((err) => {
-        alert("music could not play. please click anywhere on the page and try again.");
-        console.log(err);
-    });
+const music=document.getElementById("bgm");
+
+music.play().catch(function(){
+console.log("autoplay blocked");
+});
+
 }
 </script>
 
