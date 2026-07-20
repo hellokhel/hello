@@ -31,6 +31,11 @@ h1{
     color:#ff4f81;
 }
 
+h2{
+    text-align:center;
+    color:#444;
+}
+
 p{
     color:#444;
     font-size:18px;
@@ -43,51 +48,102 @@ p{
     margin-top:30px;
     color:#ff4f81;
     font-weight:bold;
+    font-size:25px;
+}
+
+.open-btn{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#fff5f7;
+    z-index:999;
+}
+
+.open-btn button{
+    padding:18px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:50px;
+    background:#ff4f81;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.open-btn button:hover{
+    transform:scale(1.05);
+    background:#ff2f6d;
+}
+
+#content{
+    display:none;
 }
 </style>
-
 </head>
+
 <body>
+
+<audio id="bgm" loop>
+    <source src="riskitall.mp3" type="audio/mpeg">
+</audio>
+
+<div class="open-btn" id="startScreen">
+    <button onclick="startLetter()">open my letter ❤️</button>
+</div>
+
+<div id="content">
 
 <div class="card">
 
-<h1>You are worth the wait</h1>
-    
-<h2>hi Janelle P. Paragas </h2>
+<h1>you are worth the wait</h1>
+
+<h2>hi janelle p. paragas</h2>
 
 <p>
-i just want to clarify things sayo lalo na sa nararamdaman ko sayo and honestly hindi kokayang pigilan o pekehin tong nararamdaman ko so instead of doing that ikiclear ko nalang sayo na im always here and manantili akong maghihintay sayo even if walang kasiguraduhan satin.
+i just want to clarify things sayo lalo na sa nararamdaman ko sayo and honestly hindi ko kayang pigilan o pekehin tong nararamdaman ko so instead of doing that ikiclear ko na lang sayo na i'm always here at mananatili akong maghihintay sayo even if walang kasiguraduhan satin.
 </p>
 
 <p>
-tulad ng pangako na wala akong ibang gusto ngayon kundo ikaw and tulad din ng pangako ko na simula ngayon maghihintay ako sayo palagi and mananatiling magiging consistent lang sa mga bagay bagay and ayun gusto ko lang talaga linawin din sayo lahat ng bagay na gusto ko, okay?
+tulad ng pangako na wala akong ibang gusto ngayon kundi ikaw at tulad din ng pangako ko na simula ngayon maghihintay ako sayo palagi at mananatiling consistent sa lahat ng bagay. gusto ko lang talaga linawin sayo lahat ng nasa puso ko.
 </p>
 
 <p>
-oo naiintindihan ko yung mga bagay na gusto mong mangyari sa life mo, gusto mong mag explore muna sa lahat and gusto mo pang maranasan yung mga bagay na di mo pa nararanasan and from now on wala akong ibang gustong gawin kundi suportahan at samahan ka sa mga bagay na yun.
+oo naiintindihan ko yung mga bagay na gusto mong mangyari sa buhay mo. gusto mong mag explore muna at maranasan yung mga bagay na hindi mo pa nararanasan. from now on wala akong ibang gustong gawin kundi suportahan ka at samahan ka sa bawat pangarap na gusto mong abutin.
 </p>
 
 <p>
-basta ang sakin lang palagi ka lang mag iingat sa lahat ng bagay na gagawin mo and ayun lastly wala ka nang dapat pang linawin sakin kasi simula pa lang malinaw na, na ako yung pumasok sa buhay mo ulit at wala akong ibang gagawin kundi intindihin lahat ng to at mahalin ka sa way na kaya ko.
+basta ang gusto ko lang ay lagi kang mag ingat sa lahat ng gagawin mo. wala ka nang kailangang linawin sakin kasi simula pa lang malinaw na para sakin ang lahat. ikaw yung taong pinili kong mahalin at wala akong ibang gagawin kundi intindihin ka sa abot ng makakaya ko.
 </p>
 
 <p>
-well bata kapa namana and talagang marami ka pang dapat ma explore and ayun gawin mo lahat ng bagay na ikakasaya mo at ikakabuti mo okay?, i'll support you lang palagi lorna.
+alam kong bata pa tayo at marami ka pang gustong maranasan. gawin mo lahat ng bagay na magpapasaya sayo at makakabuti para sayo. i'll always support you kahit sa malayo.
 </p>
 
 <p>
-alam mo kung bat ako maghihintay kahit walang kasiguradduhan?, kasi ikaw yung babae na willing akong gawin lahat ng bagay para lang maramdamdan mong may taong nagpapahalaga sayo and wala akong ibang gagawin kundi antayin lahat hanggang sumang ayon si tadhanda satin, at kung sakaling hindi man sumang ayon? mananatili pa rin aong mahal ka.
+alam mo kung bakit ako maghihintay kahit walang kasiguraduhan? kasi para sakin ikaw yung babaeng worth the risk. willing akong maghintay kahit gaano pa katagal dahil naniniwala akong may mga bagay na hindi minamadali lalo na kung ikaw yung hinihintay. kung dumating man yung araw na hindi maging tayo hindi magbabago yung respeto at pagmamahal ko sayo. pero habang may pag asa kahit maliit lang mananatili akong naghihintay.
 </p>
 
 <p>
 susubukan ko kasi mahal na mahal kita.
 </p>
-    
+
 <div class="footer">
 ❤️
 </div>
 
 </div>
+
+</div>
+
+<script>
+function startLetter(){
+    document.getElementById("bgm").play();
+    document.getElementById("startScreen").style.display="none";
+    document.getElementById("content").style.display="block";
+}
+</script>
 
 </body>
 </html>
